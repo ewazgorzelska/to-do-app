@@ -1,9 +1,11 @@
+import React from 'react';
+import Container from 'components/Container/Container';
 import './App.css';
 
 function App() {
   return (
     <div className="App">
-      <h1>apka</h1>
+      <Container />
     </div>
   );
 }
