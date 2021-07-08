@@ -18,13 +18,14 @@ const StyledHeader = styled.h1`
     align-items: flex-start;
     background-image: url(${checkTime()});
     background-color: #cccccc;
-    max-height: 300px;
+    max-height: 250px;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
     width: 100%;
     border: 1px solid black;
-    color: white; 
+    color: white;
+    font-size : 13px;
 `;
 
 const StyledDate = styled.div`

@@ -1,7 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
 import Header from 'components/Header/Header';
-import ListInput from 'components/List/ListInput';
+import List from 'components/List/List';
+
 
 const StyledContainer = styled.div`
     display: flex;
@@ -12,13 +13,14 @@ const StyledContainer = styled.div`
     margin-right: auto;
     padding-right: 15px;
     padding-left: 15px;
+    background-color: lightgrey;
 `;
 
 function Container() {
   return (
     <StyledContainer>
       <Header />
-      <ListInput />
+      <List />
   
     </StyledContainer>
   );

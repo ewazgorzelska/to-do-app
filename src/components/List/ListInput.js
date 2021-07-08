@@ -1,9 +1,21 @@
-import React, { useState } from 'react';
+import React, {useState} from 'react';
 import styled from 'styled-components';
+import PropTypes from 'prop-types';
 
-function ListInput() {
-    
-    const [inputValue, setInputValue] = useState('');
+function ListInput({addTask, colorFromParent}) {
+
+    const [userInput, setUserInput] = useState('');
+
+
+    const handleChange = (e) => {
+        setUserInput(e.currentTarget.value);
+    }
+
+    const handleSubmit = (e) => {
+        e.preventDefault;
+        addTask(userInput);
+        setUserInput('');
+    };
 
     const ListInputWrapper = styled.div`
         display: grid;
@@ -26,15 +38,23 @@ function ListInput() {
     `;
 
     return (
-        <ListInputWrapper>
-            <StyledInput type="text" 
-                placeholder="Add task..."
-                value = {inputValue}
-                onChange={(e) => setInputValue(e.target.value)} 
-            />
-            <StyledButton>Add task</StyledButton>
-        </ListInputWrapper>
+        
+        <form onSubmit={handleSubmit}>
+            <ListInputWrapper>
+                <StyledInput type="text" 
+                    placeholder="Enter task..."
+                    value={userInput}
+                    onChange={handleChange}
+                />
+                <StyledButton>{colorFromParent}</StyledButton>
+            </ListInputWrapper>        
+        </form>
     )
+}
+
+ListInput.propTypes = {
+    colorFromParent: PropTypes.string,
+    addTask: PropTypes.func,
 }
 
 export default ListInput;
