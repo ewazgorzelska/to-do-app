@@ -4,9 +4,14 @@ import ListItem from 'components/List/ListItem'
 import data from 'assets/data.json'
 
 function List () {
-  const color = 'Add';
-
+ 
   const [toDoList, setToDoList] = useState(data);
+
+  const addTask = userInput => {
+    let copiedArr = [...toDoList];
+    copiedArr = [...toDoList, {id: toDoList.length + 1, task: userInput, complete: false}]
+    setToDoList(copiedArr);
+  }
 
   const handleToggle = (id) => {
       let mapped = toDoList.map(task => {
@@ -17,7 +22,7 @@ function List () {
 
   return (
     <>
-      <ListInput colorFromParent={color} />
+      <ListInput addTask={addTask}/>
       <ListItem handleToggle={handleToggle} toDoList={toDoList} />
     </>
   )
