@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
 
@@ -22,14 +22,13 @@ const StyledButton = styled.button`
     border-radius: 10px;
 `;
 
-function ListInput({addTask}) {
+function ListInput({ addTask }) {
 
-    const [userInput, setUserInput] = useState('');
-
+    const [ userInput, setUserInput ] = useState('');
 
     const handleChange = (e) => {
         setUserInput(e.currentTarget.value);
-    }
+    };
 
     const handleSubmit = (e) => {
         e.preventDefault;
@@ -38,7 +37,6 @@ function ListInput({addTask}) {
     };
 
     return (
-        
         <form onSubmit={handleSubmit}>
             <ListInputWrapper>
                 <StyledInput type="text" 
