@@ -15,8 +15,7 @@ const StyledHeader = styled.div`
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
-    margin-top: 1em;
-    margin-bottom: 1em;
+    margin: 1em 0 1em 0;
     background-image: url(${checkTime()});
     background-color: white;
     height: 18vh;

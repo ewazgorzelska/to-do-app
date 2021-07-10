@@ -6,14 +6,15 @@ const StyledWrapper = styled.footer`
     display: flex;
     justify-content: space-between;
     margin-bottom: 1em;
+    padding-top: 1em;
 `;
 
 function Statistics ({ toDoList }) {
 
-    const filteredCompleted = toDoList.filter(item => item.complete == true);
+    const filteredCompleted = toDoList.filter(item => item.complete === true);
     const completed = filteredCompleted.length;
 
-    const filteredOpened = toDoList.filter(item => item.complete == false);
+    const filteredOpened = toDoList.filter(item => item.complete === false);
     const opened = filteredOpened.length;
     
     return (

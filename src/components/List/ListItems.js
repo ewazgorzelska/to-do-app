@@ -14,12 +14,9 @@ const StyledItemWrapper = styled.div`
 `;
 
 const StyledItem = styled.div`
-    padding-top: 1em;
-    padding-bottom: 1em;
-    margin-left: 1em;
-    margin-right: 1em;
-    text-align: left;
-     
+    padding: 1em 0 1em 0;
+    margin: 0 1em 0 1em;
+    text-align: left;  
 `;
 
 const StyledRemoveButton = styled.button`
@@ -47,7 +44,7 @@ function ListItems({ toDoList, handleToggle, removeItem }) {
     return (
         <StyledItemsContainer>
             {toDoList.map(
-                (item, i) => {
+                item => {
                     return (
                         <StyledItemWrapper key={item.id}>
                             <StyledItem
@@ -74,7 +71,7 @@ function ListItems({ toDoList, handleToggle, removeItem }) {
 ListItems.propTypes = {
     toDoList: PropTypes.array,
     handleToggle: PropTypes.func,
-    removeItem: PropTypes.func
+    removeItem: PropTypes.func,
 }
 
 export default ListItems;

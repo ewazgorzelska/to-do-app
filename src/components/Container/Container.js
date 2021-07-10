@@ -10,13 +10,9 @@ const StyledContainer = styled.div`
     display: flex;
     flex-direction: column;
     border: 1px solid black;
-
     max-width: 460px;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 2em;
-    padding-right: 15px;
-    padding-left: 15px;
+    margin: 2em auto 0 auto;
+    padding: 0 15px 0 15px;
     background-color: white;
     -webkit-box-shadow: 5px 0px 16px 7px rgba(230,230,230,0.9); 
     box-shadow: 5px 0px 16px 7px rgba(230,230,230,0.9);
@@ -28,7 +24,6 @@ function Container() {
 
   const addTask = (userInput) => {
     const newTask = [...toDoList, { id: toDoList.length + 1, task: userInput, complete: false }];
-
     setToDoList(newTask);
   }
 
