@@ -10,26 +10,29 @@ const checkTime = () => {
     return time > 19 ? night : day;
 };
 
-
-const StyledHeader = styled.h1`
+const StyledHeader = styled.div`
     display: flex;
     flex-direction: column;
-    justify-content: left;
+    justify-content: center;
     align-items: flex-start;
+    margin-top: 1em;
+    margin-bottom: 1em;
     background-image: url(${checkTime()});
-    background-color: #cccccc;
-    max-height: 250px;
+    background-color: white;
+    height: 18vh;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
     width: 100%;
-    border: 1px solid black;
     color: white;
-    font-size : 13px;
+    font-size: 13px;
 `;
 
 const StyledDate = styled.div`
     padding-left: 1em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 `;
 
 function Header() {

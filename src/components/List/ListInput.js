@@ -8,15 +8,15 @@ const ListInputWrapper = styled.div`
 `;
 
 const StyledInput = styled.input`
-    border: 1px solid pink;
+    border: 3px solid pink;
     margin-bottom: 1em;
-    width: 400px;
+    width: 350px;
     height: 3em;
     padding-left: 10px;
 `;
 
 const StyledButton = styled.button`
-    width: 80px;
+    width: 70px;
     background-color: pink; 
     height: 3em;
     border-radius: 10px;
@@ -27,11 +27,11 @@ function ListInput({ addTask }) {
     const [ userInput, setUserInput ] = useState('');
 
     const handleChange = (e) => {
-        setUserInput(e.currentTarget.value);
+        setUserInput(e.target.value);
     };
 
     const handleSubmit = (e) => {
-        e.preventDefault;
+        e.preventDefault();
         addTask(userInput);
         setUserInput('');
     };
