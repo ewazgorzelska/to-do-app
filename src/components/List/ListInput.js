@@ -8,18 +8,20 @@ const ListInputWrapper = styled.div`
 `;
 
 const StyledInput = styled.input`
-    border: 3px solid pink;
+    border: 3px solid ${({ theme }) => theme.colors.button};
     margin-bottom: 1em;
     width: 350px;
     height: 3em;
     padding-left: 10px;
+    border-radius: 10px;
 `;
 
 const StyledButton = styled.button`
     width: 70px;
-    background-color: pink; 
+    background-color: ${({ theme }) => theme.colors.button};
     height: 3em;
     border-radius: 10px;
+    border: none;
 `;
 
 function ListInput({ addTask }) {

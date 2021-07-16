@@ -7,6 +7,10 @@ const StyledWrapper = styled.footer`
     justify-content: space-between;
     margin-bottom: 1em;
     padding-top: 1em;
+    background-color:  ${({ theme }) => theme.colors.card};
+    padding: 1em 1em 1em 1em;
+    color: ${({ theme }) => theme.colors.fontSecondary};
+    border-radius: 5px;
 `;
 
 function Statistics ({ toDoList }) {

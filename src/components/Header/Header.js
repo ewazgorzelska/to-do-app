@@ -1,30 +1,23 @@
 import React from 'react';
 import styled from 'styled-components';
-import day from 'assets/day.jpg';
-import night from 'assets/night.jpg';
 
-const checkTime = () => {
-    const now = new Date();
-    const time = now.getHours();
 
-    return time > 19 ? night : day;
-};
-
-const StyledHeader = styled.div`
+  const StyledHeader = styled.div`
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
     margin: 1em 0 1em 0;
-    background-image: url(${checkTime()});
-    background-color: white;
+    background-color: ${({ theme }) => theme.colors.card};
     height: 18vh;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
     width: 100%;
-    color: white;
+    color: ${({ theme }) => theme.colors.fontPrimary};
     font-size: 13px;
+    border-radius: 5px;
+    background-image: ${({ theme }) => theme.image};
 `;
 
 const StyledDate = styled.div`
@@ -35,7 +28,6 @@ const StyledDate = styled.div`
 `;
 
 function Header() {
-    
     const now = new Date();
     const days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
     const dayofWeek = days[now.getDay()];

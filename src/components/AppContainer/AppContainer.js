@@ -9,16 +9,12 @@ import data from 'assets/data.json';
 const StyledContainer = styled.div`
     display: flex;
     flex-direction: column;
-    border: 1px solid black;
     max-width: 460px;
-    margin: 2em auto 0 auto;
+    margin: 2em auto 2em auto;
     padding: 0 15px 0 15px;
-    background-color: white;
-    -webkit-box-shadow: 5px 0px 16px 7px rgba(230,230,230,0.9); 
-    box-shadow: 5px 0px 16px 7px rgba(230,230,230,0.9);
 `;
 
-function Container() {
+function AppContainer() {
 
   const [ toDoList, setToDoList ] = useState(data);
 
@@ -29,13 +25,13 @@ function Container() {
 
   const handleToggle = (id) => {
       let mapped = toDoList.map(task => {
-          return task.id == id ? { ...task, complete: !task.complete } : { ...task }
-      });
+          return task.id == id ? { ...task, complete: !task.complete } : { ...task } // usage of the '===' operator results with key error
+      }); 
       setToDoList(mapped);
   }
 
   const removeItem = (id) => {
-    const filtered = toDoList.filter(task => id != task.id );
+    const filtered = toDoList.filter(task => id != task.id ); // usage of the '===' operator results with key error
     setToDoList(filtered);
   };
 
@@ -49,4 +45,4 @@ function Container() {
   );
 }
 
-export default Container;
+export default AppContainer;

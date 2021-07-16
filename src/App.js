@@ -1,11 +1,13 @@
 import React from 'react';
-import Container from 'components/Container/Container';
+import AppContainer from 'components/AppContainer/AppContainer';
+import ThemeSwitcher from 'components/ThemeSwitcher/ThemeSwitcher';
 
 function App() {
   return (
-    <div className="App">
-      <Container />
-    </div>
+    <>
+      <AppContainer />
+      <ThemeSwitcher />
+    </>
   );
 }
 
