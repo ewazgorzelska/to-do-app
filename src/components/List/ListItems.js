@@ -35,24 +35,19 @@ const StyledRemoveButton = styled.button`
     border: none;
 `;  
 
-function ListItems({ toDoList, handleToggle, removeItem }) {
+function ListItems({ toDoList, handleToggle, showModal }) {
 
     const handleClick = (e) => {
         e.preventDefault();
         handleToggle(e.target.id);
     };
 
-    const handleRemoveItem = (e) => {
-        e.preventDefault();
-        removeItem(e.target.id);
-    }
-
     return (
         <StyledItemsContainer>
             {toDoList.map(
                 item => {
                     return (
-                        <StyledItemWrapper key={item.id}>
+                        <StyledItemWrapper key={'key'+item.id}>
                             <StyledItem
                                 id={item.id}
                                 name="task"
@@ -64,7 +59,8 @@ function ListItems({ toDoList, handleToggle, removeItem }) {
                             </StyledItem>
                             <StyledRemoveButton  
                                 id={item.id} 
-                                onClick={handleRemoveItem} />
+                                onClick={(e) => showModal(e)}
+                                 />
                         </StyledItemWrapper>
                         )
                     }
@@ -78,6 +74,7 @@ ListItems.propTypes = {
     toDoList: PropTypes.array,
     handleToggle: PropTypes.func,
     removeItem: PropTypes.func,
+    showModal: PropTypes.func,
 }
 
 export default ListItems;
