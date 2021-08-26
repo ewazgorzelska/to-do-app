@@ -19,3 +19,5 @@ I chose to do this very simple app for the React.js learning purpose. First I pr
 - task statistics section that counts the tasks and reveals how many tasks are on done nad open status.
 
 To **run** this project just enter "npm start".
+
+Try out the **demo** here: https://to-do-app-ez.netlify.app/

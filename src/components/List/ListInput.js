@@ -46,7 +46,7 @@ function ListInput({ addTask }) {
                     value={userInput}
                     onChange={handleChange}
                 />
-                <StyledButton>Add</StyledButton>
+                <StyledButton disabled={!userInput}>Add</StyledButton>
             </ListInputWrapper>        
         </form>
     )
